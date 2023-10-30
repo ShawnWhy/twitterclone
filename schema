@@ -1,0 +1,29 @@
+DROP DATABASE IF EXISTS twitterclone;
+CREATE DATABASE twitterclone;
+
+
+
+use twitterclone;
+DROP TABLE IF EXISTS user;
+CREATE TABLE users(
+id INT NOT NULL AUTO_INCREMENT,
+username VARCHAR(100) NOT NULL,
+password VARCHAR(100)  NOT NULL,
+PRIMARY KEY(id)
+);
+CREATE TABLE posts(
+id INT NOT NULL AUTO_INCREMENT,
+userid INT NOT NULL,
+postbody TEXT,
+postdate DATETIME default CURRENT_TIMESTAMP,
+PRIMARY KEY(id)
+);
+INSERT INTO users (username,password) values("shawn","password"),("shawn2","password"),("shawn3", "password");
+INSERT INTO posts(userid,postbody) VALUES
+(1,"I think I am angry at things" ),
+(1,"This is pretty cool" ),
+(1,"something something" ),
+(1,"lallalala" ),
+(1,"cookie monster was here" ),
+(1,"Antkind is the bestkind" ),
+(1,"all work no play makes homer something something" );
