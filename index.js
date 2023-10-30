@@ -16,7 +16,8 @@ function parseMySQLDate(mysqlDate) {
 }
 
 const app = express();
-const port = 3000;
+var port= process.env.PORT || 8083;
+
 const axios = require("axios");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
